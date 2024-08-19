@@ -91,26 +91,22 @@
   }
 }
 
-/* Contact
- body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: url("./bg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* background: linear-gśradient(to right, #db1a60, #ff9966);
-} */
+/* Contact form */
+
 form {
+  padding-top: 40px;
   margin-top: 100px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 3rem 2rem;
   align-items: center;
   backdrop-filter: blur(3px);
   border-radius: 1rem;
+  border: 1px solid rgb(255, 255, 255);
+  width: 40%;
+  margin-right: auto;
+  margin-left: auto;
+  background: #bababa;
 }
 
 form h1 {
@@ -129,9 +125,6 @@ form div div {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-
-  line-height: 30px;
-
   background: transparent;
   border: none;
   outline: none;
@@ -145,42 +138,78 @@ form i {
 
 input {
   all: unset;
-
   transition: 0.1s ease-in-out;
   font-size: 17px;
 }
 
-input,
-button {
+input {
   height: 50px;
-  width: 400px;
-
+  width: 300px;
   margin-top: 0.2rem;
-}
-
-button {
-  background: #ff884d;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  width: 40%;
-
-  border: none;
-  outline: none;
-  border-radius: 5rem;
-
-  cursor: pointer;
-  transition: 1s ease-in;
-}
-
-button:hover {
-  transform: scale(1.05);
 }
 
 @media screen and (max-width: 550px) {
   input,
   button {
     width: 100%;
+  }
+}
+
+/* Submit button */
+button {
+  font-family: inherit;
+  font-size: 20px;
+  background: #013be9;
+  color: #ffffff;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+  width: 400px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+button span {
+  display: block;
+  margin-left: 6em;
+  transition: all 1s ease-in-out;
+}
+
+button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 1s ease-in-out;
+}
+
+button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg {
+  transform: translateX(8.2em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+  transform: translateX(25em);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
   }
 }
 

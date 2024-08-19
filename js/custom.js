@@ -1,4 +1,3 @@
-// scroll progress
 document.addEventListener("scroll", function () {
   const scrollTop = window.scrollY;
   const docHeight = document.body.clientHeight;
