@@ -489,7 +489,15 @@ header nav .burger:hover i {
   }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 1024px) {
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+@media only screen and (max-width: 425px) {
   .about-section {
     display: flex;
     flex-direction: column;
