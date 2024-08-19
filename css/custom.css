@@ -153,6 +153,9 @@ input {
   button {
     width: 100%;
   }
+  form {
+    width: 99%;
+  }
 }
 
 /* Submit button */
