@@ -1,0 +1,193 @@
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 200px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 5rem;
+}
+/*  scroll progress */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #222;
+  z-index: 50;
+}
+#progress-bar {
+  height: 100%;
+  background-color: #5027e6;
+  width: 1%;
+}
+
+/* rainbow btn */
+
+.rainbow_btn {
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+}
+
+.rainbow_btn::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 50%;
+}
+
+.rainbow_btn:active {
+  color: #000;
+}
+
+.rainbow_btn:active::after {
+  background: transparent;
+}
+
+.rainbow_btn:hover::before {
+  opacity: 1;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Contact
+ body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("./bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background: linear-gśradient(to right, #db1a60, #ff9966);
+} */
+form {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  align-items: center;
+  backdrop-filter: blur(3px);
+  border-radius: 1rem;
+}
+
+form h1 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+label {
+  font-size: 18px;
+}
+
+form div div {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+
+  line-height: 30px;
+
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid white;
+}
+
+form i {
+  margin-right: 1rem;
+  font-size: 20px;
+}
+
+input {
+  all: unset;
+
+  transition: 0.1s ease-in-out;
+  font-size: 17px;
+}
+
+input,
+button {
+  height: 50px;
+  width: 400px;
+
+  margin-top: 0.2rem;
+}
+
+button {
+  background: #ff884d;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  width: 40%;
+
+  border: none;
+  outline: none;
+  border-radius: 5rem;
+
+  cursor: pointer;
+  transition: 1s ease-in;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 550px) {
+  input,
+  button {
+    width: 100%;
+  }
+}
+
+/* footer */
+
+footer {
+  height: 250px;
+  text-align: center;
+  margin-top: 10%;
+}
